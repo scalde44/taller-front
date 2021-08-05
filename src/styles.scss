@@ -1,0 +1,20 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.contenedor-principal {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    360deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(63, 81, 181, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  min-height: 100%;
+  height: auto !important; /* cross-browser */
+  height: 100%;
+}
