@@ -1,0 +1,23 @@
+<div class="contenedor-trm">
+  <div class="contenedor-trm__titulo">
+    <h2>BIENVENIDO AL TALLER DE MANTENIMIENTO DE MOTOS</h2>
+    <p>
+      Aqui podrá llevar el control de las motos en mantenimiento de su taller
+    </p>
+  </div>
+  <div class="contenedor-trm__descripcion">
+    <h3>El TRM para el dia de hoy es:</h3>
+    <p *ngFor="let trm of trmActual | async">
+      {{ trm.valor | currency }}
+    </p>
+  </div>
+  <div class="contenedor-trm__pie">
+    <h4>
+      Si desea administrar su taller de mantenimiento de click en el siguiente
+      botón
+    </h4>
+    <button (click)="dirigirMantenimiento()" mat-raised-button color="basic">
+      Mantenimiento
+    </button>
+  </div>
+</div>
