@@ -1,7 +1,7 @@
 {
-  "/prospectos-vida": {
-    "target": "http://192.168.1.115:9002",
+  "/taller": {
+    "target": "http://localhost:9090",
+    "secure": false,
     "logLevel": "debug"
   }
-
 }
