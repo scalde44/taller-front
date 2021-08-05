@@ -5,9 +5,7 @@
   "projects": {
     "app-base": {
       "projectType": "application",
-      "schematics": {
-        
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -21,12 +19,11 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [ 
-                        
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": [
+              "src/styles.scss",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/flexboxgrid/dist/flexboxgrid.min.css"
             ],
             "scripts": []
           },
@@ -56,7 +53,6 @@
                   "type": "anyComponentStyle",
                   "maximumWarning": "6kb"
                 }
-
               ]
             }
           }
@@ -66,7 +62,6 @@
           "options": {
             "browserTarget": "app-base:build",
             "proxyConfig": "proxy.conf.json"
-
           },
           "configurations": {
             "production": {
@@ -87,12 +82,9 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-               
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
             ],
             "scripts": []
           }
@@ -105,9 +97,7 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -123,6 +113,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "app-base"
 }
