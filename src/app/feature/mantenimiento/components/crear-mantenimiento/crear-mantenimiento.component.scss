@@ -1,0 +1,70 @@
+h2 {
+  color: white;
+  text-align: center;
+  font-size: 2em;
+}
+.crop-image {
+  display: block;
+  height: 100%;
+  width: 100%;
+  img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+  }
+}
+.mt-5 {
+  margin-top: 1em;
+}
+.wrap-reverse {
+  -webkit-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+
+.btn-volver {
+  width: 100%;
+  background-color: #dee2e6;
+}
+.btn-crear {
+  width: 100%;
+  background-color: #28a745;
+  color: white;
+}
+button:disabled {
+  color: white !important;
+  border: 2px solid white;
+  opacity: 0.5;
+}
+/**/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.mat-input-element {
+  caret-color: #fff !important;
+}
+
+.mat-form-field-underline {
+  background-color: #fff !important;
+}
+
+.mat-form-field-ripple {
+  background-color: #fff;
+}
+.mat-form-field-required-marker {
+  color: white;
+}
+.mat-form-field-wrapper,
+.mat-select-value,
+.mat-select-arrow,
+mat-datepicker-toggle,
+input,
+mat-label {
+  color: white !important;
+}
+
+.time-container input {
+  color: black !important;
+}

@@ -1,0 +1,62 @@
+.crop-image {
+    display: block;
+    height: 100%;
+    width: 100%;
+    img {
+      object-fit: contain;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .card {
+    position: relative;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-end;
+    text-decoration: none;
+    border: 4px solid lightblue;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .fondo-listado {
+    background-image: url("../../../../../assets/images/listado.jpg");
+    background-size: cover;
+    opacity: 0.9;
+  }
+  
+  .fondo-activos {
+    background-image: url("https://st4.depositphotos.com/1734074/29180/v/600/depositphotos_291803760-stock-illustration-checklist-with-green-check-marks.jpg");
+    background-size: cover;
+    opacity: 0.9;
+  }
+  
+  .fondo-crear {
+    background-image: url("https://easy-maint.net/blog_easymaint/wp-content/uploads/2016/04/beneficios-del-mantenimiento-preventivo-easymaint.jpg");
+    background-size: cover;
+    opacity: 0.9;
+  }
+  
+  .inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 25px;
+  }
+  
+  .title {
+    font-size: 24px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    color: #181818;
+    text-shadow: 0px 2px 2px lightblue;
+    position: relative;
+    margin: 0 0 20px 0;
+  }
