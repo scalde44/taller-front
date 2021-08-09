@@ -5,6 +5,13 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Mantenimiento } from '../../shared/model/mantenimiento.model';
 import { MantenimientoService } from '../../shared/service/mantenimiento.service';
+
+const LONGITUD_MINIMA_PLACA = 5;
+const LONGITUD_MAXIMA_PLACA = 6;
+const PATRON_PLACA = '^[a-zA-Z0-9]+$';
+const CILINDRAJE_MINIMO = 50;
+const PATRON_CILINDRAJE = '^[0-9]+$';
+const PATRON_FECHA = 'yyyy-MM-dd HH:mm:ss';
 @Component({
   selector: 'app-crear-mantenimiento',
   templateUrl: './crear-mantenimiento.component.html',
@@ -28,10 +35,10 @@ export class CrearMantenimientoComponent implements OnInit {
         '',
         [
           Validators.required,
-          Validators.minLength(5),
-          Validators.maxLength(6),
+          Validators.minLength(LONGITUD_MINIMA_PLACA),
+          Validators.maxLength(LONGITUD_MAXIMA_PLACA),
           Validators.pattern(
-            '^[a-zA-Z0-9]+$'
+            PATRON_PLACA
           ),
         ],
       ],
@@ -39,8 +46,8 @@ export class CrearMantenimientoComponent implements OnInit {
         '',
         [
           Validators.required,
-          Validators.min(50),
-          Validators.pattern('^[0-9]+$'),
+          Validators.min(CILINDRAJE_MINIMO),
+          Validators.pattern(PATRON_CILINDRAJE),
         ],
       ],
       fecha: ['', [
@@ -55,7 +62,7 @@ export class CrearMantenimientoComponent implements OnInit {
     );
   }
   guardarMotocicletaMantenimiento() {
-    const fechaTransformada = this.datePipe.transform(new Date(this.datosMotocicletaForm.get('fecha')?.value), 'yyyy-MM-dd HH:mm:ss');
+    const fechaTransformada = this.datePipe.transform(new Date(this.datosMotocicletaForm.get('fecha')?.value), PATRON_FECHA);
     const detalleMantenimiento: Mantenimiento = {
       id: null as any,
       placa: this.datosMotocicletaForm.get('placa')?.value,
