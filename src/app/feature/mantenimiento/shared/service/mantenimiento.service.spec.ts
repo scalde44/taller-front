@@ -1,16 +1,21 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { HttpService } from '@core/services/http.service';
 
 import { MantenimientoService } from './mantenimiento.service';
 
 describe('MantenimientoService', () => {
-  let service: MantenimientoService;
+  let mantenimientoService: MantenimientoService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(MantenimientoService);
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [MantenimientoService, HttpService]
+    });
+    mantenimientoService = TestBed.inject(MantenimientoService);
   });
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
+    expect(mantenimientoService).toBeTruthy();
   });
 });

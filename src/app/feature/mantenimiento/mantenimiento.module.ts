@@ -24,13 +24,17 @@ import { MenuComponent } from './components/menu/menu.component';
 import { MantenimientoRoutingModule } from './mantenimiento-routing.module';
 import { MantenimientoService } from './shared/service/mantenimiento.service';
 import { ListarMantenimientoHoyComponent } from './components/listar-mantenimiento-hoy/listar-mantenimiento-hoy.component';
+import { EliminarMantenimientoComponent } from './components/eliminar-mantenimiento/eliminar-mantenimiento.component';
+import { ActualizarMantenimientoComponent } from './components/actualizar-mantenimiento/actualizar-mantenimiento.component';
 @NgModule({
   declarations: [
     ListarMantenimientoComponent,
     CrearMantenimientoComponent,
     MantenimientoComponent,
     MenuComponent,
-    ListarMantenimientoHoyComponent
+    ListarMantenimientoHoyComponent,
+    EliminarMantenimientoComponent,
+    ActualizarMantenimientoComponent
   ],
   imports: [
     MantenimientoRoutingModule,
