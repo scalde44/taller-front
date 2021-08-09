@@ -33,27 +33,21 @@ export class ListarMantenimientoHoyComponent implements OnInit, AfterViewInit {
       console.error(err);
     });
   }
-  darSalidaMantenimiento(mantenimiento: Mantenimiento) {
-    this.mantenimientoService.actualizar(mantenimiento).subscribe(() => {
-      this.alertaExitosa('Mantenimiento dado de alta!', `Moto con placa: ${mantenimiento.placa}`);
+  mostrarAlertaActualizado(evento: any) {
+    if (evento.actualizado === true) {
       this.listarMantenimientosActivosHoy();
-    }, err => {
-      this.alertaError('Ocurrio un error...', err.error.mensaje);
-    });
+      this.alertaExitosa('Mantenimiento dado de alta!', `Moto con placa: ${evento.mensaje}`);
+    } else {
+      this.alertaError('Ocurrio un error...', evento.mensaje);
+    }
   }
-  eliminarMantenimiento(idMantenimiento: number) {
-    this.mantenimientoService.eliminar(idMantenimiento).subscribe(() => {
-      this.alertaExitosa('Mantenimiento eliminado!', `id: ${idMantenimiento}`);
+  mostrarAlertaEliminado(evento: any) {
+    if (evento.eliminado === true) {
       this.listarMantenimientosActivosHoy();
-    }, err => {
-      this.alertaError('Ocurrio un error...', err.error.mensaje);
-    });
-  }
-  dirigirMenu() {
-    this.router.navigate(['mantenimiento']);
-  }
-  dirigirCrear() {
-    this.router.navigate(['mantenimiento/crear']);
+      this.alertaExitosa('Mantenimiento eliminado!', `id: ${evento.mensaje}`);
+    } else {
+      this.alertaError('Ocurrio un error...', evento.mensaje);
+    }
   }
   alertaExitosa(titulo: string, mensaje: string) {
     Swal.fire({
@@ -69,5 +63,10 @@ export class ListarMantenimientoHoyComponent implements OnInit, AfterViewInit {
       text: mensaje,
     });
   }
-
+  dirigirMenu() {
+    this.router.navigate(['mantenimiento']);
+  }
+  dirigirCrear() {
+    this.router.navigate(['mantenimiento/crear']);
+  }
 }
