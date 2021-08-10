@@ -12,7 +12,7 @@
       <div class="row">
         <mat-form-field appearance="standard" [style.width.%]="100">
           <mat-label>Placa</mat-label>
-          <input matInput formControlName="placa" required />
+          <input matInput id="placaMoto" formControlName="placa" required />
           <mat-error *ngIf="isValidFieldDatosMotocicletaForm('placa')">
             La longitud de la placa debe estar entre 5 y 7
           </mat-error>
@@ -23,6 +23,7 @@
           <mat-label>Cilindraje</mat-label>
           <input
             matInput
+            id="cilindrajeMoto"
             type="number"
             min="50"
             formControlName="cilindraje"
@@ -38,11 +39,11 @@
           <mat-label>Fecha de entrada</mat-label>
           <input
             matInput
+            id="fechaMoto"
             [ngxMatDatetimePicker]="picker"
             formControlName="fecha"
             (click)="picker.open()"
             [min]="fechaActual"
-            readonly
             required
           />
 
@@ -74,6 +75,7 @@
         <div class="col-xs-12 col-md-6">
           <button
             class="btn-crear mt-5"
+            id="btnCrearMoto"
             type="submit"
             [disabled]="!datosMotocicletaForm.valid"
             mat-raised-button
