@@ -58,7 +58,7 @@ export class ListarMantenimientoHoyComponent implements OnInit, AfterViewInit {
   }
   alertaError(titulo: string, mensaje: string) {
     Swal.fire({
-      icon: 'success',
+      icon: 'error',
       title: titulo,
       text: mensaje,
     });

@@ -35,15 +35,6 @@ export class ListarMantenimientoComponent implements OnInit, AfterViewInit {
 
     });
   }
-  darSalidaMantenimiento(mantenimiento: Mantenimiento) {
-    this.mantenimientoService.actualizar(mantenimiento).subscribe(() => {
-      this.alertaExitosa('Mantenimiento dado de alta!', `Moto con placa: ${mantenimiento.placa}`);
-      this.listarMantenimientos();
-    }, err => {
-      this.alertaError('Ocurrio un error...', err.error.mensaje);
-    });
-  }
-
   mostrarAlertaActualizado(evento: any) {
     if (evento.actualizado === true) {
       this.listarMantenimientos();
@@ -69,7 +60,7 @@ export class ListarMantenimientoComponent implements OnInit, AfterViewInit {
   }
   alertaError(titulo: string, mensaje: string) {
     Swal.fire({
-      icon: 'success',
+      icon: 'error',
       title: titulo,
       text: mensaje,
     });
