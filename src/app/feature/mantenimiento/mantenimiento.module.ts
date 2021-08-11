@@ -55,6 +55,7 @@ import { ActualizarMantenimientoComponent } from './components/actualizar-manten
     MatDatepickerModule,
     NgxMatNativeDateModule
   ],
-  providers: [MantenimientoService, { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },]
+  providers: [MantenimientoService, { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
+  ]
 })
 export class MantenimientoModule { }

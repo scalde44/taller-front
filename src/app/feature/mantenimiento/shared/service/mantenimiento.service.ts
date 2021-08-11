@@ -4,9 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Mantenimiento } from '../model/mantenimiento.model';
 
 const API_URL = environment.endpoint + '/mantenimientos';
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class MantenimientoService {
 
   constructor(protected http: HttpService) { }
