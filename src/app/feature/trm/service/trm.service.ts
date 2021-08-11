@@ -6,9 +6,7 @@ import { Trm } from '../model/trm.model';
 
 const TRM_URL = environment.urlTrm;
 const TRM_TOKEN = environment.tokenTrm;
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class TrmService {
 
   constructor(protected http: HttpService) { }
