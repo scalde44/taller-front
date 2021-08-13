@@ -55,6 +55,6 @@ describe('EliminarMantenimientoComponent', () => {
     component.eliminarMantenimiento();
 
     expect(spy).toHaveBeenCalled();
-    expect(component.mantenimientoEliminado.emit).toHaveBeenCalledWith({ eliminado: true, mensaje: component.mantenimiento.id });
+    expect(component.mantenimientoEliminado.emit).toHaveBeenCalledWith({ accion: true, mensaje: component.mantenimiento.id.toString() });
   });
 });

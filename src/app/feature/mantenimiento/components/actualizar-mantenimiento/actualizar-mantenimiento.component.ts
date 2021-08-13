@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { RespuestaMantenimiento } from '@mantenimiento/shared/model/respuesta-mantenimiento.model';
 import { Mantenimiento } from '../../shared/model/mantenimiento.model';
 import { MantenimientoService } from '../../shared/service/mantenimiento.service';
 
@@ -8,7 +9,7 @@ import { MantenimientoService } from '../../shared/service/mantenimiento.service
 })
 export class ActualizarMantenimientoComponent implements OnInit {
   @Input() mantenimiento: Mantenimiento;
-  @Output() mantenimientoActualizado: EventEmitter<any> = new EventEmitter();
+  @Output() mantenimientoActualizado: EventEmitter<RespuestaMantenimiento> = new EventEmitter();
   constructor(protected mantenimientoService: MantenimientoService) { }
 
   ngOnInit(): void {
@@ -16,9 +17,9 @@ export class ActualizarMantenimientoComponent implements OnInit {
 
   darSalidaMantenimiento() {
     this.mantenimientoService.actualizar(this.mantenimiento).subscribe(() => {
-      this.mantenimientoActualizado.emit({ actualizado: true, mensaje: this.mantenimiento.placa });
+      this.mantenimientoActualizado.emit({ accion: true, mensaje: this.mantenimiento.placa });
     }, err => {
-      this.mantenimientoActualizado.emit({ actualizado: false, mensaje: err.error.mensaje });
+      this.mantenimientoActualizado.emit({ accion: false, mensaje: err.error.mensaje });
     });
   }
 }

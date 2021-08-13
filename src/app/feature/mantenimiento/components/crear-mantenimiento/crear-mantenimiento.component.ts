@@ -64,12 +64,12 @@ export class CrearMantenimientoComponent implements OnInit {
   guardarMotocicletaMantenimiento() {
     const fechaTransformada = this.datePipe.transform(new Date(this.datosMotocicletaForm.get('fecha')?.value), PATRON_FECHA);
     const detalleMantenimiento: Mantenimiento = {
-      id: null as any,
+      id: null,
       placa: this.datosMotocicletaForm.get('placa')?.value,
       cilindraje: this.datosMotocicletaForm.get('cilindraje')?.value,
       fecha: fechaTransformada,
-      tarifa: null as any,
-      estado: null as any
+      tarifa: null,
+      estado: null
     };
     this.mantenimientoService.guardar(detalleMantenimiento).subscribe(() => {
       Swal.fire({

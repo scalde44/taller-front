@@ -3,6 +3,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { RespuestaMantenimiento } from '@mantenimiento/shared/model/respuesta-mantenimiento.model';
 import Swal from 'sweetalert2';
 import { Mantenimiento } from '../../shared/model/mantenimiento.model';
 import { MantenimientoService } from '../../shared/service/mantenimiento.service';
@@ -29,20 +30,18 @@ export class ListarMantenimientoHoyComponent implements OnInit, AfterViewInit {
     this.mantenimientoService.listarActivosPorFecha(fechaTransformada).subscribe(data => {
       this.listaMantenimientosHoy = data;
       this.dataSource.data = this.listaMantenimientosHoy;
-    }, err => {
-      console.error(err);
     });
   }
-  mostrarAlertaActualizado(evento: any) {
-    if (evento.actualizado === true) {
+  mostrarAlertaActualizado(evento: RespuestaMantenimiento) {
+    if (evento.accion === true) {
       this.listarMantenimientosActivosHoy();
       this.alertaExitosa('Mantenimiento dado de alta!', `Moto con placa: ${evento.mensaje}`);
     } else {
       this.alertaError('Ocurrio un error...', evento.mensaje);
     }
   }
-  mostrarAlertaEliminado(evento: any) {
-    if (evento.eliminado === true) {
+  mostrarAlertaEliminado(evento: RespuestaMantenimiento) {
+    if (evento.accion === true) {
       this.listarMantenimientosActivosHoy();
       this.alertaExitosa('Mantenimiento eliminado!', `id: ${evento.mensaje}`);
     } else {

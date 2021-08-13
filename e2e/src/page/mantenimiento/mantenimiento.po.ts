@@ -5,7 +5,7 @@ export class MantenimientoPage {
     private linkListarMantenimientosHoy = element(by.id('linkListarMantenimientosHoy'));
     private linkCrearMantenimiento = element(by.id('linkCrearMantenimiento'));
     private listaMantenimientos = element.all(by.css('app-listar-mantenimiento mat-row'));
-    private listaMantenimientosHoy = element.all(by.css('app-listar-mantenimiento-hoy tr.mat-row'));
+    private listaMantenimientosHoy = element.all(by.css('app-listar-mantenimiento-hoy mat-row'));
     private inputPlacaMoto = element(by.id('placaMoto'));
     private inputCilindrajeMoto = element(by.id('cilindrajeMoto'));
     private inputFechaMoto = element(by.id('fechaMoto'));

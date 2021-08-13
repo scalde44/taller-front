@@ -55,6 +55,6 @@ describe('ActualizarMantenimientoComponent', () => {
     component.darSalidaMantenimiento();
 
     expect(spy).toHaveBeenCalled();
-    expect(component.mantenimientoActualizado.emit).toHaveBeenCalledWith({ actualizado: true, mensaje: component.mantenimiento.placa });
+    expect(component.mantenimientoActualizado.emit).toHaveBeenCalledWith({ accion: true, mensaje: component.mantenimiento.placa });
   });
 });
