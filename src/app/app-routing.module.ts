@@ -7,7 +7,7 @@ import { HomeComponent } from '@home/home.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent, canActivate: [SecurityGuard] },
-  { path: 'mantenimiento', loadChildren: () => import('./feature/mantenimiento/mantenimiento.module').then(mod => mod.MantenimientoModule) }
+  { path: 'mantenimiento', loadChildren: () => import('@mantenimiento/mantenimiento.module').then(mod => mod.MantenimientoModule) }
 
 ];
 
